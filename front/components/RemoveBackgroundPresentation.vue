@@ -29,8 +29,12 @@ export default {
     };
   },
   methods: {
-    handleFileSelected(file) {
+    async handleFileSelected(file) {
       console.log(file);
+
+      const res = await this.$postRemoveBackground(file.base64);
+      console.log(res);
+
       // this.imageData =
     },
   },

@@ -16,6 +16,8 @@ export default defineNuxtConfig({
     ],
   ],
 
+  plugins: ["~/plugins/request.js"],
+
   devtools: { enabled: true },
 
   components: [
