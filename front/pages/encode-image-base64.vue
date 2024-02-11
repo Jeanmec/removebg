@@ -33,7 +33,7 @@
         <div class="result">
           <copy-base-64
             title="Without base64 prefix :"
-            :base64="fileData.base64"
+            :base64="fileData.base64.split(',')[1]"
             :base64ToShow="fileData.base64.split(',')[1].slice(0, 100) + '...'"
           />
         </div>
@@ -89,7 +89,7 @@ export default {
   width: 75%;
   font-family: "Poppins";
   margin: 0 auto;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   h1 {
     font-size: 3rem;
     margin: 15px 0;

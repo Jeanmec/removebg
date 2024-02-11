@@ -1,8 +1,8 @@
 <template>
   <div class="form-remove-background-container">
-    <button @click="selectPicture">
+    <div @click="selectPicture" class="form-remove-background">
       <Icon name="solar:cloud-upload-linear" />
-    </button>
+    </div>
 
     <input type="file" accept="image/png, image/jpeg" @change="selectPicture" />
   </div>
@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 .form-remove-background-container {
-  a {
+  .form-remove-background {
     border: 3px dashed #fff;
     border-radius: 5px;
     width: 100%;

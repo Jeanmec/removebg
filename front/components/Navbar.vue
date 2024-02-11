@@ -5,11 +5,11 @@
       <NuxtLink to="/encode-image-base64"
         ><Icon name="bx:barcode-reader" /> Encode Base64 image</NuxtLink
       >
-      <NuxtLink to="/decode-image-base64">
+      <NuxtLink to="/convert-base64-to-image">
         <Icon name="iconoir:scan-barcode" />
         Decode Base64 image
       </NuxtLink>
-      <NuxtLink to="/">
+      <NuxtLink to="/remove-background">
         <Icon name="fluent:video-background-effect-20-filled" />
         Remove image background
       </NuxtLink>

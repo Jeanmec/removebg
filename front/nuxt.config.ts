@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ["/styles/global.scss"],
+
   modules: [
     "nuxt-icon",
 

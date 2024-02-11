@@ -8,16 +8,32 @@
     >
     <div class="form-presentation-container">
       <div class="form-container">
-        <form-remove-background />
+        <upload-image-form @file-selected="handleFileSelected" />
+      </div>
+      <div class="result">
+        <!-- <img v-if="image" :src="image" /> -->
       </div>
     </div>
+    <service-advantages />
   </div>
 </template>
 
 <script>
-import RemoveBackgroundForm from "../components/FormRemoveBackground.vue";
+import ServiceAdvantages from "./ServiceAdvantages.vue";
+import UploadImageForm from "./UploadImageForm.vue";
 export default {
-  components: { RemoveBackgroundForm },
+  components: { UploadImageForm, ServiceAdvantages },
+  data() {
+    return {
+      imageData: null,
+    };
+  },
+  methods: {
+    handleFileSelected(file) {
+      console.log(file);
+      // this.imageData =
+    },
+  },
 };
 </script>
 
@@ -27,6 +43,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 75%;
+  margin: 0 auto;
 
   .advantages-container {
     display: flex;
@@ -38,7 +56,7 @@ export default {
     display: flex;
     column-gap: 3em;
     .form-container {
-      width: 50%;
+      width: 100%;
     }
   }
   .description {

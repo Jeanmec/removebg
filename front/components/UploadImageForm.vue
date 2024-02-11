@@ -102,11 +102,19 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: transparent;
+
     padding: 15px 0;
     transition: 0.3s;
     margin: 0 auto;
     cursor: pointer;
+
+    background: transparent;
+    background-image: linear-gradient(45deg, #ffffff0f 25%, transparent 25%),
+      linear-gradient(-45deg, #ffffff0f 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ffffff0f 75%),
+      linear-gradient(-45deg, transparent 75%, #ffffff0f 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
     span {
       font-size: 1.5rem;
       font-weight: bold;
