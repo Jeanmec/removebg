@@ -1,7 +1,9 @@
 <template>
   <div class="text-presentation-container">
     <h1>
-      Image <span class="bg-transparent-animation">background</span> remover
+      <span>Image</span>
+      <span class="bg-transparent-animation">background</span>
+      <span>remover</span>
     </h1>
     <h2>
       Remove the background of your images <b>online</b> for <b>free</b> in one
@@ -35,12 +37,16 @@ export default {};
     width: 100%;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 0;
     font-weight: 700;
     line-height: 1.2em;
     color: #fff;
     font-family: "Poppins";
+
+    span {
+      display: block;
+    }
 
     .bg-transparent-animation {
       animation: changeColor 2s infinite;

@@ -1,7 +1,7 @@
-async function postRemoveBackground(base64) {
+async function postRemoveBackground(file) {
   const apiUrl =
     process.env.NODE_ENV === "development"
-      ? "http://localhost:3003/api/remove-background/"
+      ? "http://localhost:3003/api/remove-background"
       : "URL_PROD";
 
   return await $fetch(apiUrl, {
@@ -9,7 +9,7 @@ async function postRemoveBackground(base64) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ base64 }),
+    body: JSON.stringify({ file }),
   });
 }
 

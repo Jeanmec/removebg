@@ -1,15 +1,15 @@
 <template>
   <div class="presentation-container">
     <text-presentation />
-    <illustration />
+    <image-comparaison-slider-example />
   </div>
 </template>
 
 <script>
-import Illustration from "./Illustration.vue";
+import ImageComparaisonSliderExample from "./ImageComparaisonSliderExample.vue";
 import TextPresentation from "./TextPresentation.vue";
 export default {
-  components: { Illustration, TextPresentation },
+  components: { TextPresentation, ImageComparaisonSliderExample },
   name: "Presentation",
 };
 </script>
@@ -22,5 +22,6 @@ export default {
   font-weight: 100;
   column-gap: 3em;
   width: 75%;
+  margin: 50px 0;
 }
 </style>

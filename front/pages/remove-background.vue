@@ -6,14 +6,20 @@
     <div class="form">
         <remove-background-form />
     </div>
+    <div class="advantages-container">
+
+        <service-advantages />
+    </div>
   </div>
 </template>
 
 <script>
 import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
+import ServiceAdvantages from '../components/ServiceAdvantages.vue';
 export default {
     components: {
-        RemoveBackgroundForm
+        RemoveBackgroundForm,
+        ServiceAdvantages
     }
 };
 </script>
@@ -27,6 +33,19 @@ export default {
   font-family: "Poppins";
   margin: 0 auto;
   min-height: calc(100vh - 100px);
+
+  h1 {
+    font-size: 3rem;
+    margin: 15px 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    font-weight: 300;
+  }
+  .advantages-container {
+    width: 75%;
+  }
 }
 
 </style>
