@@ -1,24 +1,21 @@
 const { removeBackground } = require("@imgly/background-removal-node");
 const fs = require("fs");
-const os = require("os");
 const path = require("path");
-
 const uniqueFilename = require("unique-filename");
-// let image_src = "./temp/toto.jpeg";
-
 const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const cors = require("cors");
 var bodyParser = require("body-parser");
+require("dotenv").config();
 const port = process.env.PORT || 3003;
 
 app.use(bodyParser.json({ limit: "3mb" }));
 app.use(bodyParser.urlencoded({ limit: "3mb", extended: true }));
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://toto.com"],
+  origin: ["http://localhost:3000", "https://remove-my-background.com"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 };
@@ -87,16 +84,6 @@ function createFileFromBase64(base64String, filePath, desiredExtension) {
     console.error("Error creating file:", error.message);
     return false;
   }
-}
-
-function writeToFile(filePath, content) {
-  fs.writeFile(filePath, content, (err) => {
-    if (err) {
-      console.error("Error writing to file:", err);
-    } else {
-      console.log("Content written to file:", filePath);
-    }
-  });
 }
 
 async function blobToBase64(blob) {

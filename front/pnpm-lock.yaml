@@ -14,9 +14,6 @@ dependencies:
   nuxt-icon:
     specifier: ^0.6.8
     version: 0.6.8(nuxt@3.10.1)(vite@5.1.1)(vue@3.4.18)
-  primevue:
-    specifier: ^3.48.1
-    version: 3.48.1(vue@3.4.18)
   vue:
     specifier: ^3.4.15
     version: 3.4.18
@@ -4765,6 +4762,7 @@ packages:
       vue: ^3.0.0
     dependencies:
       vue: 3.4.18
+    dev: true
 
   /proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}

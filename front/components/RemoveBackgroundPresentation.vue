@@ -1,10 +1,10 @@
 <template>
   <div class="remove-background-form-contrainer">
     <span class="description"
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolorum aut
-      quam nisi eaque quod molestias voluptatem eveniet deserunt distinctio
-      adipisci a asperiores, amet saepe obcaecati aliquam tenetur corrupti
-      facilis?</span
+      >Explore the capabilities of our completely free background removal
+      service. Enjoy professional-level image editing without any charges.
+      Embrace creativity without limitations, as our service comes to you at no
+      cost.</span
     >
     <div class="form-presentation-container">
       <div

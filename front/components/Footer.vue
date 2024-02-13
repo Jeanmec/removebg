@@ -49,6 +49,12 @@ export default {
       align-items: center;
       column-gap: 5px;
     }
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.2em;
+      row-gap: 10px;
+    }
   }
 }
 

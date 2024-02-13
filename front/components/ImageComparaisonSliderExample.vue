@@ -1,15 +1,11 @@
 <template>
   <div class="image-comparaison-slider-example-container">
     <ImgComparisonSlider class="slider">
-      <img
-        slot="first"
-        style="width: 100%"
-        src="/public/image-with-background.jpg"
-      />
+      <img slot="first" style="width: 100%" src="/image-with-background.jpg" />
       <img
         slot="second"
         style="width: 100%"
-        src="/public/image-without-background.png"
+        src="/image-without-background.png"
       />
     </ImgComparisonSlider>
   </div>
@@ -27,18 +23,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider {
-  border-radius: 15px;
-  &:focus {
-    outline: none;
+.image-comparaison-slider-example-container {
+  .slider {
+    border-radius: 15px;
+    &:focus {
+      outline: none;
+    }
+    @media screen and (max-width: 1200px) {
+      width: 50%;
+    }
   }
-}
 
-.custom-animated-handle {
-  transition: transform 0.2s;
-}
-
-.slider-with-animated-handle:hover .custom-animated-handle {
-  transform: scale(1.2);
+  display: flex;
+  justify-content: center;
 }
 </style>

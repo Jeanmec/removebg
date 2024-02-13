@@ -5,10 +5,10 @@
       <span class="bg-transparent-animation">background</span>
       <span>remover</span>
     </h1>
-    <h2>
+    <span class="description">
       Remove the background of your images <b>online</b> for <b>free</b> in one
       click
-    </h2>
+    </span>
   </div>
 </template>
 
@@ -51,8 +51,13 @@ export default {};
     .bg-transparent-animation {
       animation: changeColor 2s infinite;
     }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 4em;
+      text-align: center;
+    }
   }
-  h2 {
+  .description {
     font-family: "Poppins";
     font-size: 1.2rem;
     margin: 0;
@@ -62,6 +67,16 @@ export default {};
       font-weight: 700;
       border-bottom: 4px solid #715aff;
     }
+    @media screen and (max-width: 1200px) {
+      text-align: center;
+      display: flex;
+      column-gap: 5px;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 35px;
   }
 }
 </style>

@@ -65,11 +65,17 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1rem;
-  margin: 50px;
+  margin: 50px 0;
 
   .advantage {
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
     &.demi {
       width: calc(50% - 0.66rem);
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
     }
     width: calc(33% - 0.66rem);
     border: 2px solid black;

@@ -2,19 +2,20 @@
   <div class="service-presentation-container">
     <div class="service-presentation">
       <div class="service-presentation-illustration">
-        <img src="https://via.placeholder.com/300" alt="Illustration" />
+        <img src="/hand-bg-remove.jpg" alt="Illustration" />
       </div>
       <div class="service-presentation-text">
         <h2>Remove the background from your images in one click</h2>
         <p>
-          Our Albackaround remover can automaticallvdetectithe subiect.an once
-          from anvohoto. remove bain smooth cutout wav without anv manul work
-          with artificialintellioence too. its easv to handling hair, animal
-          turo any comolext edoes in a tew seconds. Save vour time and eneravito
-          make high quality transparent PNG or add the #f3f3f3 background to
-          photo
+          Elevate your digital content by bidding farewell to distracting
+          backgrounds that hinder integration. Our background removal service
+          seamlessly adapts images for emails, websites, and more. Impress your
+          email subscribers with captivating visuals, enhancing your marketing
+          efforts. Optimize your website's visual appeal and boost social media
+          engagement with clean, professional images. Unlock the full potential
+          of your online presence through our precise and affordable background
+          removal solutions.
         </p>
-        <button>Try it now</button>
       </div>
     </div>
   </div>

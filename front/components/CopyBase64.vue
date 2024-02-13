@@ -61,6 +61,7 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
     pre {
       margin: 5px 0;
       width: 100%;

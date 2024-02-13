@@ -23,5 +23,8 @@ export default {
   column-gap: 3em;
   width: 75%;
   margin: 50px 0;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 }
 </style>
