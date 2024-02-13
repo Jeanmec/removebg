@@ -32,9 +32,6 @@ app.post("/api/remove-background", async (req, res) => {
 
   const fileExtension = getFileExtensionFromBase64(req.body.file.base64);
 
-  console.log(randomTmpfile);
-  console.log(fileExtension);
-
   createFileFromBase64(req.body.file.base64, randomTmpfile, fileExtension);
 
   removeBackground(randomTmpfile + "." + fileExtension).then(async (blob) => {
