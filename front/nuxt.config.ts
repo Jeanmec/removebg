@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       {
         families: {
           Poppins: [400, 700],
-          Inter: [100, , 300, 400, 600, 700],
+          Inter: [100, 300, 400, 600, 700],
         },
       },
     ],
