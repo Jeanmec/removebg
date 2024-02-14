@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   css: ["/styles/global.scss"],
 
   modules: [
+    "nuxt-schema-org",
+    "nuxt-purgecss",
+    "nuxt-seo-experiments",
+    "nuxt-simple-robots",
+    "@nuxtjs/sitemap",
     "nuxt-icon",
 
     [
@@ -15,6 +20,12 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
+  site: {
+    // production URL
+    name: "Remove My Background",
+    url: "https://remove-my-background.com",
+  },
 
   plugins: ["~/plugins/request.js"],
 

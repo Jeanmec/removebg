@@ -26,6 +26,15 @@ export default {
     ServicePresentationTransition,
   },
   name: "HomePage",
+
+  title: "Remove My Background",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Remove My Background allows you to remove the background from your photos for free.",
+    },
+  ],
 };
 </script>
 
