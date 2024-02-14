@@ -13,7 +13,20 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
+useHead({
+  title: "Remove My Background",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Remove My Background allows you to remove the background from your photos for free.",
+    },
+  ],
+});
+</script>
+
+<script>
 import Presentation from "../components/Presentation.vue";
 import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
 import ServiceAdvantages from "../components/ServiceAdvantages.vue";
@@ -26,15 +39,6 @@ export default {
     ServicePresentationTransition,
   },
   name: "HomePage",
-
-  title: "Remove My Background",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Remove My Background allows you to remove the background from your photos for free.",
-    },
-  ],
 };
 </script>
 

@@ -27,11 +27,8 @@
   </div>
 </template>
 
-<script>
-import { toast } from "vue3-toastify";
-import "vue3-toastify/dist/index.css";
-export default {
-  components: {},
+<script setup>
+useHead({
   title: "Remove My Background - Convert Base64 to Image",
   meta: [
     {
@@ -40,6 +37,15 @@ export default {
         "Convert Base64 to images online using a complimentary decoding tool. Decode Base64 as an image and preview it instantly in your web browser. Gain valuable insights into the image, including resolution, MIME type, extension, and size.",
     },
   ],
+});
+</script>
+
+<script>
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
+export default {
+  components: {},
+
   data() {
     return {
       base64: "",

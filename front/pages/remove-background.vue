@@ -10,15 +10,8 @@
   </div>
 </template>
 
-<script>
-import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
-import ServiceAdvantages from "../components/ServiceAdvantages.vue";
-export default {
-  components: {
-    RemoveBackgroundForm,
-    ServiceAdvantages,
-  },
-
+<script setup>
+useHead({
   title: "Remove My Background - background removal tool",
   meta: [
     {
@@ -27,6 +20,17 @@ export default {
         "Background Removal Tool that allows you to remove the background from your photos for free.",
     },
   ],
+});
+</script>
+
+<script>
+import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
+import ServiceAdvantages from "../components/ServiceAdvantages.vue";
+export default {
+  components: {
+    RemoveBackgroundForm,
+    ServiceAdvantages,
+  },
 };
 </script>
 
