@@ -54,6 +54,14 @@ export default {
     Loader,
     CopyBase64,
   },
+  title: "Remove My Background - Encode Image to Base64",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Encode an image to Base64. Get instant base64 of any image for free.",
+    },
+  ],
   data() {
     return {
       fileInprocess: null,

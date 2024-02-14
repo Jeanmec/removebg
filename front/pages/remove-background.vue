@@ -1,26 +1,32 @@
 <template>
   <div class="remove-background-container">
-    <h1>
-        Remove image background
-    </h1>
+    <h1>Remove image background</h1>
     <div class="form">
-        <remove-background-form />
+      <remove-background-form />
     </div>
     <div class="advantages-container">
-
-        <service-advantages />
+      <service-advantages />
     </div>
   </div>
 </template>
 
 <script>
 import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
-import ServiceAdvantages from '../components/ServiceAdvantages.vue';
+import ServiceAdvantages from "../components/ServiceAdvantages.vue";
 export default {
-    components: {
-        RemoveBackgroundForm,
-        ServiceAdvantages
-    }
+  components: {
+    RemoveBackgroundForm,
+    ServiceAdvantages,
+  },
+
+  title: "Remove My Background - background removal tool",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Background Removal Tool that allows you to remove the background from your photos for free.",
+    },
+  ],
 };
 </script>
 
@@ -47,5 +53,4 @@ export default {
     width: 75%;
   }
 }
-
 </style>

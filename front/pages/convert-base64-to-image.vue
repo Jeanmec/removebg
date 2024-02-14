@@ -32,6 +32,14 @@ import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 export default {
   components: {},
+  title: "Remove My Background - Convert Base64 to Image",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Convert Base64 to images online using a complimentary decoding tool. Decode Base64 as an image and preview it instantly in your web browser. Gain valuable insights into the image, including resolution, MIME type, extension, and size.",
+    },
+  ],
   data() {
     return {
       base64: "",
