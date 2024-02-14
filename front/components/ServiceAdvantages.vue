@@ -4,7 +4,7 @@
       <Icon name="tdesign:cloud-upload" />
 
       <div class="text">
-        <h3>Upload images</h3>
+        <span>Upload images</span>
         <p>
           Upload your images and we will remove the background for you in one
           click
@@ -14,7 +14,7 @@
     <div class="advantage">
       <Icon name="fluent:video-background-effect-20-filled" />
       <div class="text">
-        <h3>Remove background</h3>
+        <span>Remove background</span>
         <p>
           Upload your image to automatically remove the background in an
           instant.
@@ -24,7 +24,7 @@
     <div class="advantage">
       <Icon name="mingcute:download-2-line" />
       <div class="text">
-        <h3>Download image</h3>
+        <span>Download image</span>
         <p>Download your image with the background removed for free.</p>
       </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="advantage demi">
       <Icon name="ooui:user-anonymous" />
       <div class="text">
-        <h3>Anonymous and secure</h3>
+        <span>Anonymous and secure</span>
         <p>
           We do not store your images and we do not require any personal
           information.
@@ -43,7 +43,7 @@
     <div class="advantage demi">
       <Icon name="icon-park-outline:compression" />
       <div class="text">
-        <h3>Optional compression</h3>
+        <span>Optional compression</span>
         <p>
           Compress your image to reduce its weight and make it easier to share.
         </p>
@@ -109,7 +109,7 @@ export default {
     .text {
       display: flex;
       flex-direction: column;
-      h3 {
+      span {
         transition: 0.3s;
         font-size: 1.5rem;
         margin: 0;

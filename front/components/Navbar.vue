@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <NuxtLink to="/"><Icon name="ph:house-bold" /></NuxtLink>
+      <NuxtLink to="/"><Icon name="ph:house-bold" /> Home</NuxtLink>
       <NuxtLink to="/encode-image-base64"
         ><Icon name="bx:barcode-reader" /> Encode Base64 image</NuxtLink
       >
