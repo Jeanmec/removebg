@@ -4,7 +4,6 @@ export default defineNuxtConfig({
 
   modules: [
     "nuxt-schema-org",
-    "nuxt-purgecss",
     "nuxt-seo-experiments",
     "nuxt-simple-robots",
     "@nuxtjs/sitemap",
