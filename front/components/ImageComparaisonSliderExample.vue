@@ -1,10 +1,16 @@
 <template>
   <div class="image-comparaison-slider-example-container">
     <ImgComparisonSlider class="slider">
-      <img slot="first" style="width: 100%" src="/image-with-background.jpg" />
+      <img
+        slot="first"
+        style="width: 100%"
+        alt="baby-with-background"
+        src="/image-with-background.jpg"
+      />
       <img
         slot="second"
         style="width: 100%"
+        alt="baby-without-background"
         src="/image-without-background.png"
       />
     </ImgComparisonSlider>
