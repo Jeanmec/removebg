@@ -7,7 +7,8 @@
     "dev": "nuxt dev --port 4444",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "PORT=4444 nuxt start"
   },
   "dependencies": {
     "@img-comparison-slider/vue": "^8.0.0",
