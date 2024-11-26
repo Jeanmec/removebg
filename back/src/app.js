@@ -27,6 +27,13 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+const removeBackgroundConfig = {
+  debug: false,
+  output: {
+    quality: 1,
+  },
+};
+
 app.post("/api/remove-background", async (req, res) => {
   const randomTmpfile = uniqueFilename("./temp/", "image");
 
@@ -34,7 +41,10 @@ app.post("/api/remove-background", async (req, res) => {
 
   createFileFromBase64(req.body.file.base64, randomTmpfile, fileExtension);
 
-  removeBackground(randomTmpfile + "." + fileExtension).then(async (blob) => {
+  removeBackground(
+    randomTmpfile + "." + fileExtension,
+    removeBackgroundConfig
+  ).then(async (blob) => {
     const base64 = await blobToBase64(blob);
     res.status(200).send({
       base64,
