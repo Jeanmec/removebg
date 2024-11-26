@@ -7,75 +7,66 @@
       cost.</span
     >
     <div class="form-presentation-container">
-      <div
-        :class="
-          'form-container ' + (imageData && imageData.base64 ? 'demi' : 'full')
-        "
-      >
-        <upload-image-form @file-selected="handleFileSelected" />
+      <div class="form-container">
+        <FormUploadImage
+          @file-selected="handleFileSelected"
+          :fileInTreatment="fileInTreatment"
+        />
       </div>
-      <div class="loading-container" v-if="loading">
-        <loader />
-      </div>
-      <div class="result" v-else-if="imageData">
-        <div
-          class="image-result"
-          :class="resultBackgroundMode == 'white' ? 'bg-white' : 'bg-dark'"
-        >
-          <img :src="imageData.base64" />
-          <button
-            class="toggle-bg"
-            :class="resultBackgroundMode == 'white' ? 'dark' : 'white'"
-            @click="
-              resultBackgroundMode =
-                resultBackgroundMode == 'white' ? 'dark' : 'white'
-            "
-          >
-            <Icon name="material-symbols-light:invert-colors" />
-          </button>
-        </div>
-        <button class="download-result" @click="downloadImageWithoutBackground">
-          Download <Icon name="material-symbols:download" />
-        </button>
-      </div>
+      <Modal
+        v-if="imagesData?.withoutBackground"
+        :open="true"
+        :pictures="imagesData"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Loader from "./Loader.vue";
-import UploadImageForm from "./UploadImageForm.vue";
+import Modal from "@/components/Modal.vue";
+import FormUploadImage from "~/components/services/FormUploadImage.vue";
 export default {
-  components: { UploadImageForm, Loader },
+  components: { FormUploadImage, Modal },
   data() {
     return {
-      imageData: null,
+      imagesData: null,
       maxFileSize: 3 * 1024 * 1024,
       resultBackgroundMode: "white",
-      loading: false,
+      fileInTreatment: false,
     };
   },
   methods: {
     async handleFileSelected(file) {
+      this.imagesData = null;
+
       if (file.size > this.maxFileSize) {
         toast.error(`File is too big, max size is ${this.maxFileSize}MB.`, {
           autoClose: 2000,
         });
         return;
       }
-      this.loading = true;
+      this.fileInTreatment = true;
 
       const res = await this.$postRemoveBackground(file);
+
       if (res.base64) {
-        this.imageData = { base64: res.base64, name: res.fileName };
+        this.imagesData = {
+          original: {
+            base64: file.base64,
+            name: res.fileName,
+          },
+          withoutBackground: {
+            base64: res.base64,
+          },
+        };
       }
-      this.loading = false;
+      this.fileInTreatment = false;
     },
 
     downloadImageWithoutBackground() {
       const link = document.createElement("a");
-      link.href = this.imageData.base64;
-      link.download = this.imageData.name;
+      link.href = this.imagesData.base64;
+      link.download = this.imagesData.name;
       link.click();
     },
   },
@@ -102,12 +93,7 @@ export default {
     column-gap: 3em;
     align-items: center;
     .form-container {
-      &.full {
-        width: 100%;
-      }
-      &.demi {
-        width: 50%;
-      }
+      width: 100%;
     }
     .result {
       width: 50%;
@@ -190,11 +176,6 @@ export default {
           color: #fff;
         }
       }
-    }
-    .loading-container {
-      width: 50%;
-      display: flex;
-      justify-content: center;
     }
   }
   .description {

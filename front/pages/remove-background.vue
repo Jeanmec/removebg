@@ -1,6 +1,9 @@
 <template>
   <div class="remove-background-container">
-    <h1>Remove image background</h1>
+    <h1>
+      <Icon name="line-md:text-box-multiple-to-text-box-transition" />
+      Remove image background
+    </h1>
     <div class="form">
       <remove-background-form />
     </div>
@@ -24,8 +27,8 @@ useHead({
 </script>
 
 <script>
-import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
-import ServiceAdvantages from "../components/ServiceAdvantages.vue";
+import RemoveBackgroundForm from "@/components/page/RemoveBackgroundPresentation.vue";
+import ServiceAdvantages from "@/components/page/ServiceAdvantages.vue";
 export default {
   components: {
     RemoveBackgroundForm,
@@ -46,7 +49,8 @@ export default {
 
   h1 {
     font-size: 3rem;
-    margin: 15px 0;
+    margin: 15px 10px;
+    text-align: center;
   }
   h2 {
     font-size: 1.5rem;

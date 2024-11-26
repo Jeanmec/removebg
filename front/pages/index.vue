@@ -27,10 +27,10 @@ useHead({
 </script>
 
 <script>
-import Presentation from "../components/Presentation.vue";
-import RemoveBackgroundForm from "../components/RemoveBackgroundPresentation.vue";
-import ServiceAdvantages from "../components/ServiceAdvantages.vue";
-import ServicePresentationTransition from "../components/ServicePresentationTransition.vue";
+import Presentation from "@/components/page/Presentation.vue";
+import RemoveBackgroundForm from "@/components/page/RemoveBackgroundPresentation.vue";
+import ServiceAdvantages from "@/components/page/ServiceAdvantages.vue";
+import ServicePresentationTransition from "~/components/page/ServicePresentationTransition.vue";
 export default {
   components: {
     Presentation,

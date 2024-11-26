@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ImageComparaisonSliderExample from "./ImageComparaisonSliderExample.vue";
-import TextPresentation from "./TextPresentation.vue";
+import ImageComparaisonSliderExample from "@/components/page/ImageComparaisonSliderExample.vue";
+import TextPresentation from "@/components/TextPresentation.vue";
 export default {
   components: { TextPresentation, ImageComparaisonSliderExample },
   name: "Presentation",

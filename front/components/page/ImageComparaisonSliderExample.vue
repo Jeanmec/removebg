@@ -4,14 +4,18 @@
       <img
         slot="first"
         style="width: 100%"
-        alt="baby-with-background"
-        src="/image-with-background.jpg"
+        :alt="original.alt ? original.alt : ''"
+        :src="original.src ? original.src : original.base64"
       />
       <img
         slot="second"
         style="width: 100%"
-        alt="baby-without-background"
-        src="/image-without-background.png"
+        :alt="withoutBackground.alt ? withoutBackground.alt : ''"
+        :src="
+          withoutBackground.src
+            ? withoutBackground.src
+            : withoutBackground.base64
+        "
       />
     </ImgComparisonSlider>
   </div>
@@ -24,6 +28,24 @@ export default {
   name: "ExampleComponent",
   components: {
     ImgComparisonSlider,
+  },
+  props: {
+    original: {
+      type: Object,
+      required: true,
+      default: () => ({
+        alt: "Image with background",
+        src: "/image-with-background.jpg",
+      }),
+    },
+    withoutBackground: {
+      type: Object,
+      required: true,
+      default: () => ({
+        alt: "Image without background",
+        src: "/image-without-background.png",
+      }),
+    },
   },
 };
 </script>

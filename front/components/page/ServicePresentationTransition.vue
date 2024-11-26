@@ -31,6 +31,11 @@ export default {};
   .service-presentation {
     display: flex;
     gap: 2rem;
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .service-presentation-illustration {
       img {
         width: 300px;
@@ -38,6 +43,9 @@ export default {};
         object-fit: cover;
         border-radius: 10px;
       }
+    }
+    .service-presentation-text h2 {
+      text-align: center;
     }
   }
   h2 {

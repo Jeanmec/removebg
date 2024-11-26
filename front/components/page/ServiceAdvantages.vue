@@ -78,7 +78,7 @@ export default {
       }
     }
     width: calc(33% - 0.66rem);
-    border: 2px solid black;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
@@ -92,18 +92,6 @@ export default {
       margin: 0 10px;
       height: auto;
       transition: 0.3s;
-    }
-    &:hover {
-      transition: 0.3s;
-      border: 2px solid #715aff;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-      h3 {
-        transition: 0.3s;
-        text-decoration: underline;
-        text-decoration-color: #715aff;
-      }
     }
 
     .text {

@@ -1,6 +1,9 @@
 <template>
   <div class="convert-base64-to-image-container">
-    <h1>Convert Base64 to image</h1>
+    <h1>
+      <Icon name="line-md:document-list-twotone" /> Convert Base64 to image
+      <Icon name="line-md:image-twotone" />
+    </h1>
     <p class="description">
       Easily convert Base64 to images online using a complimentary decoding
       tool. Decode Base64 as an image and preview it instantly in your web
@@ -135,6 +138,11 @@ export default {
   font-family: "Poppins";
   margin: 0 auto;
   min-height: calc(100vh - 100px);
+  h1 {
+    font-size: 3rem;
+    margin: 15px 10px;
+    text-align: center;
+  }
   .description {
     text-align: center;
     font-family: "Inter";

@@ -1,8 +1,18 @@
 <template>
   <div class="upload-image-form-container">
     <button @click="openFileInput" class="upload-image-form">
-      <Icon name="solar:cloud-upload-linear" />
-      <span> Click here to upload an image </span>
+      <template v-if="!uploadInProgress && !fileInTreatment">
+        <Icon name="line-md:cloud-alt-upload-loop" />
+        <span> Click here to upload an image </span>
+      </template>
+      <template v-else-if="fileInTreatment">
+        <Icon name="line-md:cog-filled-loop" />
+        <span class="upload-state">File in treatment{{ animatedDots }}</span>
+      </template>
+      <template v-else>
+        <Icon name="line-md:downloading-loop" />
+        <span class="upload-state">Upload in progress{{ animatedDots }}</span>
+      </template>
     </button>
     <input
       type="file"
@@ -20,12 +30,43 @@
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 export default {
+  props: {
+    fileInTreatment: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
+  },
   data() {
     return {
       acceptedTypes: ["png", "jpeg", "jpg"],
+      uploadInProgress: false,
+      dotState: false,
     };
   },
+  computed: {
+    animatedDots() {
+      return this.dotState ? "." : "..";
+    },
+  },
+  mounted() {
+    this.startDotAnimation();
+  },
+  unmounted() {
+    this.stopDotAnimation();
+  },
   methods: {
+    startDotAnimation() {
+      this.dotInterval = setInterval(() => {
+        this.dotState = !this.dotState;
+      }, 500);
+    },
+    stopDotAnimation() {
+      if (this.dotInterval) {
+        clearInterval(this.dotInterval);
+        this.dotInterval = null;
+      }
+    },
     openFileInput() {
       this.$refs.input.click();
     },
@@ -46,8 +87,12 @@ export default {
       return `${size.toFixed(2)} ${units[i]}`;
     },
     handleFileChange(event) {
+      console.log("ici");
       const fileInput = event.target;
       const file = fileInput.files[0];
+
+      console.log(fileInput);
+      console.log(file);
 
       if (file) {
         if (!this.checkFileType(file)) {
@@ -57,10 +102,11 @@ export default {
               autoClose: 5000,
             }
           );
+          fileInput.value = "";
           return;
         }
 
-        this.$emit("base64-process", true);
+        this.uploadInProgress = true;
 
         setTimeout(() => {
           if (file) {
@@ -77,8 +123,9 @@ export default {
                   height: image.height,
                   base64: reader.result,
                 };
+                this.uploadInProgress = false;
                 this.$emit("file-selected", fileData);
-                this.$emit("base64-process", false);
+                fileInput.value = "";
               };
             };
             reader.readAsDataURL(file);

@@ -1,14 +1,13 @@
 <template>
   <div class="encode-image-container">
-    <h1>Encode an image to Base64</h1>
+    <h1>
+      <Icon name="line-md:document-code-twotone" /> Encode an image to Base64
+    </h1>
 
     <div class="upload-form-container">
-      <upload-image-form
-        @file-selected="handleFileSelected"
-        @base64-process="handleStateFileProcess"
-      />
+      <FormUploadImage @file-selected="handleFileSelected" />
     </div>
-    <div v-if="fileInprocess == false && fileData" class="result-container">
+    <div v-if="fileData" class="result-container">
       <h2>
         Get the base64 of the selected image by clicking on the area below.
       </h2>
@@ -39,7 +38,41 @@
         </div>
       </div>
     </div>
-    <div v-else-if="fileInprocess == true"><loader /></div>
+
+    <hr />
+
+    <div class="info-section">
+      <h2>Why Convert Your Image to Base64?</h2>
+      <p>
+        Converting your image to Base64 format can be incredibly useful for a
+        variety of applications. Base64 encoding allows you to embed images
+        directly into HTML, CSS, or JSON files, eliminating the need for
+        separate image files and reducing the number of HTTP requests. This can
+        lead to faster load times and a more streamlined user experience.
+      </p>
+      <p>
+        With our tool, you can easily convert your image to Base64 with or
+        without the prefix. The prefix is useful when embedding the Base64
+        string directly into HTML or CSS, as it specifies the data type and
+        encoding. Without the prefix, the Base64 string can be used in other
+        contexts where the prefix is not needed.
+      </p>
+      <h3>Applications of Base64 Encoding</h3>
+      <ul>
+        <li>
+          <strong>Web Development:</strong> Embed images directly into HTML or
+          CSS files to reduce HTTP requests and improve page load times.
+        </li>
+        <li>
+          <strong>Data Storage:</strong> Store images in databases as Base64
+          strings to simplify data management.
+        </li>
+      </ul>
+      <p>
+        Whether you're a web developer, email marketer, our tool makes it easy
+        to convert your images to Base64 format.
+      </p>
+    </div>
   </div>
 </template>
 
@@ -57,21 +90,19 @@ useHead({
 </script>
 
 <script>
-import CopyBase64 from "../components/CopyBase64.vue";
-import Loader from "../components/Loader.vue";
-import UploadImageForm from "../components/UploadImageForm.vue";
+import CopyBase64 from "~/components/services/CopyBase64.vue";
+import FormUploadImage from "~/components/services/FormUploadImage.vue";
 
 export default {
   components: {
-    UploadImageForm,
-    Loader,
+    FormUploadImage,
     CopyBase64,
   },
 
   data() {
     return {
       fileInprocess: null,
-      fileData: Object,
+      fileData: null,
     };
   },
   watch: {
@@ -86,14 +117,19 @@ export default {
     handleFileSelected(fileData) {
       this.fileData = fileData;
     },
-    handleStateFileProcess() {
-      this.fileInprocess = !this.fileInprocess;
-    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+hr {
+  width: 50%;
+  border: 0;
+  height: 1px;
+  background: #ffffff8a;
+  margin: 10px 0;
+  margin: 50px 0;
+}
 .encode-image-container {
   display: flex;
   flex-direction: column;
@@ -107,6 +143,7 @@ export default {
   h1 {
     font-size: 3rem;
     margin: 15px 0;
+    text-align: center;
   }
   h2 {
     font-size: 1.5rem;

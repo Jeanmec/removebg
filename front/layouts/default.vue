@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Footer from "../components/Footer.vue";
-import Navbar from "../components/Navbar.vue";
+import Footer from "@/components/page/Footer.vue";
+import Navbar from "@/components/page/Navbar.vue";
 export default {
   components: {
     Navbar,
@@ -38,5 +38,6 @@ export default {
     #0015ff
   );
   font-family: "Poppins";
+  position: relative;
 }
 </style>
