@@ -60,10 +60,6 @@ export default {
       this.imageData = await this.getImageDataFromBase64(this.base64);
     },
 
-    checkBase64(base64) {
-      console.log(this.checkBase64FileType(base64));
-    },
-
     checkBase64FileType(firstChar) {
       switch (firstChar) {
         case "/":

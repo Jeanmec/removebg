@@ -87,12 +87,8 @@ export default {
       return `${size.toFixed(2)} ${units[i]}`;
     },
     handleFileChange(event) {
-      console.log("ici");
       const fileInput = event.target;
       const file = fileInput.files[0];
-
-      console.log(fileInput);
-      console.log(file);
 
       if (file) {
         if (!this.checkFileType(file)) {
