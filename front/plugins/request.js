@@ -1,7 +1,7 @@
 async function postRemoveBackground(file) {
   const apiUrl =
     process.env.NODE_ENV === "development"
-      ? "http://localhost:3003/api/remove-background"
+      ? "http://localhost:4445/api/remove-background"
       : "https://api.remove-my-background.com/api/remove-background";
 
   return await $fetch(apiUrl, {

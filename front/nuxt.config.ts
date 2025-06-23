@@ -20,6 +20,12 @@ export default defineNuxtConfig({
     ],
   ],
 
+  runtimeConfig: {
+    public: {
+      BACK_URL: process.env.BACK_URL,
+    },
+  },
+
   site: {
     // production URL
     name: "Remove My Background",
